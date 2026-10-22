@@ -1,6 +1,11 @@
 id: 1
-version: 1
+version: 2
 description: Voluntas engineering challenge orderbook update schema.
+
+enums:
+  BookSide:
+    Bid: 0
+    Ask: 1
 
 messages:
   Snapshot:
@@ -49,4 +54,8 @@ messages:
         id: 5
         type: int64
         description: The absolute available quantity, in fixed point; 1_000_000 = 1 share/contract
+      side:
+        id: 6
+        type: BookSide
+        description: Which side of the book this price level belongs to
       symbol: { id: 3, type: string }
